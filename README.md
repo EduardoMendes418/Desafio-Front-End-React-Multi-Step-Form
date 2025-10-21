@@ -1,73 +1,108 @@
-# React + TypeScript + Vite
+from pathlib import Path
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Conteúdo do README traduzido e aprimorado
 
-Currently, two official plugins are available:
+🧭 Desafio Formulário de Registro Multi-Etapas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Funcionalidades Principais
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Processo de Registro em 5 Etapas
 
-## Expanding the ESLint configuration
+**1. Informações Pessoais → 2. Endereço → 3. Conta → 4. Preferências → 5. Revisão**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Recursos Principais
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Validação Completa:** Utiliza **Zod** para validação de todos os campos
+- **Persistência de Dados:** Armazena os dados localmente com **Zustand**
+- **Barra de Progresso:** Indica visualmente o avanço entre as etapas
+- **Design Responsivo:** Totalmente adaptável a qualquer tamanho de tela
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📋 Detalhes das Etapas
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 1️⃣ Informações Pessoais
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Nome completo, CPF/CNPJ, e-mail, telefone e data de nascimento
+- Formatação em tempo real para CPF/CNPJ e telefone
+- Validação de idade mínima (18+ anos)
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2️⃣ Endereço
+
+- **Auto-preenchimento via CEP** usando a API **ViaCEP**
+- Validação e formatação de CEP em tempo real
+- Preenchimento automático de rua, bairro, cidade e estado
+
+### 3️⃣ Conta
+
+- Criação de **nome de usuário** com regras de validação
+- Senha com **indicador de força**
+- Escolha de plano com **cartões visuais comparativos**
+- Integração com **API mock** para dados de planos
+
+### 4️⃣ Preferências
+
+- Preferências de notificação (e-mail, SMS, push)
+- Escolha de tema com **pré-visualização ao vivo**
+- Seleção de interesses com opções pré-definidas
+
+### 5️⃣ Revisão e Confirmação
+
+- Revisão completa de todos os dados
+- Possibilidade de editar cada seção
+- Feedback visual de sucesso/erro após o envio
+
+---
+
+## 🛠️ Recursos Técnicos
+
+### Validação e Formulários
+
+- **React Hook Form** para gerenciamento de formulários
+- **Zod** para validação de esquemas
+- Feedback de erro em tempo real
+- Regras de validação personalizadas
+
+### Gerenciamento de Estado
+
+- **Zustand** com persistência via localStorage
+- Tipagem forte e segura
+- Compartilhamento de dados entre etapas
+
+### Interface e Experiência do Usuário
+
+- **Tailwind CSS** para estilização
+- Componente personalizado de **barra de progresso**
+- **Toasts** para mensagens de feedback
+- Estados de carregamento e tratamento de erros
+
+### Integrações com API
+
+- **ViaCEP:** para busca automática de endereços brasileiros
+- **Mock API:** simula carregamento de planos e envio do formulário
+- Manipulação assíncrona com tratamento de erros
+
+---
+
+## ⚙️ Instalação e Configuração
+
+### Pré-requisitos
+
+- **Node.js** (versão 14 ou superior)
+- **npm** ou **yarn**
+
+### Passos de Instalação
+
+```bash
+# Instale as dependências
+npm install
+
+# Execute o servidor de desenvolvimento
+npm run dev
+
+# Gere o build de produção
+npm run build
+
 ```
