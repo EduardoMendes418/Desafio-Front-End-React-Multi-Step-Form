@@ -1,11 +1,10 @@
-import React from 'react';
 import { useFormStore } from './store/formStore';
 import { StepProgressBar } from './components/StepProgressBar';
-import { FormStep1Personal } from './components/FormStep1Personal';
 import { FormStep2Address } from './components/FormStep2Address';
 import { FormStep3Account } from './components/FormStep3Account';
 import { FormStep4Preferences } from './components/FormStep4Preferences';
 import { FormStep5Review } from './components/FormStep5Review';
+import { FormStep1Personal } from './components/Form/step1/FormStep1Personal';
 
 const steps = [
   { number: 1, label: 'Pessoal' },
