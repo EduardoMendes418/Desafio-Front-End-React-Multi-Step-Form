@@ -36,7 +36,7 @@ export const useAddressForm = (onNext: () => void, onBack: () => void) => {
       const addressData = await fetchAddressByCEP(cleanedCEP);
       
       if (addressData) {
-        // Auto-fill address fields
+
         const fieldsToUpdate = {
           street: addressData.logradouro,
           neighborhood: addressData.bairro,
@@ -49,10 +49,8 @@ export const useAddressForm = (onNext: () => void, onBack: () => void) => {
           setValue(field as keyof AddressFormData, value);
         });
 
-        // Clear errors for auto-filled fields
         clearErrors(['street', 'neighborhood', 'city', 'state']);
         
-        // Trigger validation for auto-filled fields
         await trigger(['street', 'neighborhood', 'city', 'state']);
       } else {
         setError('cep', { 
