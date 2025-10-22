@@ -1,8 +1,8 @@
 import React from "react";
-import { ToastProps } from "../../../types/toast";
-import { useToast } from "../../../hooks/useToast";
-import { ToastContainer } from "../../ui/ToastContainer";
-import { ToastContent } from "../../ui/ToastContent";
+import { ToastProps } from "../../../../types/toast";
+import { useToast } from "../../../../hooks/useToast";
+import { ToastContainer } from "../../../ui/ToastContainer";
+import { ToastContent } from "../../../ui/ToastContent";
 
 
 export const Toast: React.FC<ToastProps> = ({

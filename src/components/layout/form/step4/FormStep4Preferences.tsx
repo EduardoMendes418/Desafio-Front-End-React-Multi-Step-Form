@@ -1,10 +1,10 @@
 import React from "react";
-import { usePreferencesForm } from "../../../hooks/usePreferencesForm";
-import { NotificationSection } from "../../ui/NotificationSection";
-import { ThemeSection } from "../../ui/ThemeSection";
-import { InterestsSection } from "../../ui/InterestsSection";
-import { PreferencesNavigation } from "../../ui/PreferencesNavigation";
-import { FormStep4PreferencesProps } from "../../../types/components";
+import { usePreferencesForm } from "../../../../hooks/usePreferencesForm";
+import { NotificationSection } from "../../../ui/NotificationSection";
+import { ThemeSection } from "../../../ui/ThemeSection";
+import { InterestsSection } from "../../../ui/InterestsSection";
+import { PreferencesNavigation } from "../../../ui/PreferencesNavigation";
+import { FormStep4PreferencesProps } from "../../../../types/components";
 
 export const FormStep4Preferences: React.FC<FormStep4PreferencesProps> = ({
   onNext,

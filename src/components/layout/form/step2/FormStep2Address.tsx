@@ -1,9 +1,9 @@
 import React from "react";
-import { FormStep2AddressProps } from "../../../types/components";
-import { useAddressForm } from "../../../hooks/useAddressForm";
-import { InputField } from "../../ui/InputField";
-import { FieldGrid } from "../../ui/FieldGrid";
-import { FormNavigation } from "../../ui/FormNavigation";
+import { FormStep2AddressProps } from "../../../../types/components";
+import { useAddressForm } from "../../../../hooks/useAddressForm";
+import { InputField } from "../../../ui/InputField";
+import { FieldGrid } from "../../../ui/FieldGrid";
+import { FormNavigation } from "../../../ui/FormNavigation";
 
 export const FormStep2Address: React.FC<FormStep2AddressProps> = ({
   onNext,

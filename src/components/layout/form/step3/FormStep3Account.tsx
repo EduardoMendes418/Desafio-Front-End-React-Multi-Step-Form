@@ -1,10 +1,10 @@
 import React from "react";
-import { InputField } from "../../ui/InputField";
-import { PasswordStrengthMeter } from "../../ui/PasswordStrengthMeter";
-import { PlanSelector } from "../../ui/PlanSelector";
-import { FormNavigation } from "../../ui/FormNavigation";
-import { useAccountForm } from "../../../hooks/useAccountForm";
-import { FormStep3AccountProps } from "../../../types/components";
+import { InputField } from "../../../ui/InputField";
+import { PasswordStrengthMeter } from "../../../ui/PasswordStrengthMeter";
+import { PlanSelector } from "../../../ui/PlanSelector";
+import { FormNavigation } from "../../../ui/FormNavigation";
+import { useAccountForm } from "../../../../hooks/useAccountForm";
+import { FormStep3AccountProps } from "../../../../types/components";
 
 export const FormStep3Account: React.FC<FormStep3AccountProps> = ({
   onNext,

@@ -1,14 +1,14 @@
 import React from "react";
-import { FormStep5ReviewProps } from "../../../types/components";
+import { FormStep5ReviewProps } from "../../../../types/components";
 import {
   formatAccountData,
   formatAddressData,
   formatPersonalData,
   formatPreferencesData,
-} from "../../../utils/reviewFormatters";
-import { useReviewForm } from "../../../hooks/useReviewForm";
-import { ReviewSection } from "../../ui/ReviewSection";
-import { ReviewNavigation } from "../../ui/ReviewNavigation";
+} from "../../../../utils/reviewFormatters";
+import { useReviewForm } from "../../../../hooks/useReviewForm";
+import { ReviewSection } from "../../../ui/ReviewSection";
+import { ReviewNavigation } from "../../../ui/ReviewNavigation";
 import { Toast } from "../toast/Toast";
 
 

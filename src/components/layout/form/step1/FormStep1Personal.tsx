@@ -1,7 +1,7 @@
 import React from 'react';
-import { InputField } from '../../ui/InputField';
-import { usePersonalForm } from '../../../hooks/usePersonalForm';
-import { FormStep1PersonalProps } from '../../../types/components';
+import { InputField } from '../../../ui/InputField';
+import { usePersonalForm } from '../../../../hooks/usePersonalForm';
+import { FormStep1PersonalProps } from '../../../../types/components';
 
 export const FormStep1Personal: React.FC<FormStep1PersonalProps> = ({ onNext }) => {
   const {
