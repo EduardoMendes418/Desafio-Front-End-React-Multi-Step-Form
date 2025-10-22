@@ -1,3 +1,5 @@
+import { FormData } from "../types/form";
+
 export interface Plan {
   id: string;
   name: string;
@@ -29,7 +31,7 @@ export const getPlans = async (): Promise<Plan[]> => {
   ];
 };
 
-export const submitForm = async (): Promise<{ success: boolean; message: string }> => {
+export const submitForm = async (_formData: FormData): Promise<{ success: boolean; message: string }> => {
   await new Promise(resolve => setTimeout(resolve, 2000));
   const success = Math.random() > 0.2;
   

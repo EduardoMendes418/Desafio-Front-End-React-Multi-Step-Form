@@ -1,6 +1,6 @@
 import { useFormStore } from './store/formStore';
 import { StepProgressBar } from './components/StepProgressBar';
-import { FormStep5Review } from './components/FormStep5Review';
+import { FormStep5Review } from './components/form/step5/FormStep5Review';
 import { FormStep1Personal } from './components/form/step1/FormStep1Personal';
 import { FormStep2Address } from './components/form/step2/FormStep2Address';
 import { FormStep3Account } from './components/form/step3/FormStep3Account';
