@@ -28,6 +28,7 @@ export const InputField: React.FC<InputFieldProps> = ({
     transition-colors duration-200
     ${error ? "border-red-500 focus:border-red-500 focus:ring-red-500" : ""}
   `;
+  const inputId = `input-${label.replace(/\s+/g, "-").toLowerCase()}`;
 
   return (
     <div className="space-y-1">
@@ -37,6 +38,7 @@ export const InputField: React.FC<InputFieldProps> = ({
       </label>
 
       <input
+          id={inputId}
         type={type}
         {...register}
         onChange={onChange}
