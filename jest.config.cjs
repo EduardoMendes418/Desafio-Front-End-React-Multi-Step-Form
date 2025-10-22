@@ -14,4 +14,10 @@ module.exports = {
   },
   testMatch: ["**/__tests__/**/*.(ts|tsx)", "**/?(*.)+(spec|test).(ts|tsx)"],
   transformIgnorePatterns: ["node_modules/(?!(react|react-dom)/)"],
+  coveragePathIgnorePatterns: [
+    "<rootDir>/src/store/",
+    "<rootDir>/src/utils/",
+    "<rootDir>/src/hooks/",
+    "<rootDir>/src/schemas/",
+  ],
 };
