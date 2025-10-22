@@ -19,5 +19,8 @@ module.exports = {
     "<rootDir>/src/utils/",
     "<rootDir>/src/hooks/",
     "<rootDir>/src/schemas/",
+    "<rootDir>/src/components/ui/",
+    "<rootDir>/src/constants/",
+    "<rootDir>/src/services/",
   ],
 };
