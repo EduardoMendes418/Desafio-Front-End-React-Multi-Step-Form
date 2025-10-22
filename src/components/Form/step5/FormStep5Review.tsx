@@ -9,7 +9,8 @@ import {
 import { useReviewForm } from "../../../hooks/useReviewForm";
 import { ReviewSection } from "../../ui/ReviewSection";
 import { ReviewNavigation } from "../../ui/ReviewNavigation";
-import { Toast } from "../../Toast";
+import { Toast } from "../toast/Toast";
+
 
 export const FormStep5Review: React.FC<FormStep5ReviewProps> = ({
   onBack,
