@@ -1,5 +1,3 @@
-
-
 # 🧭 Desafio Formulário de Registro Multi-Etapas
 
 <img width="730" height="820" alt="cadastro" src="https://github.com/user-attachments/assets/eee6e25e-86f2-4f6e-a575-5026b1b470a3" />
@@ -85,6 +83,8 @@
 - Manipulação assíncrona com tratamento de erros
 
 ---
+
+### Teste unitário
 
 ## ⚙️ Instalação e Configuração
 
