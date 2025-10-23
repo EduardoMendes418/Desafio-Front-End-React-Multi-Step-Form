@@ -86,6 +86,8 @@
 
 ### Teste unitário
 
+<img width="655" height="411" alt="teste" src="https://github.com/user-attachments/assets/e9f61bf4-388f-4d6c-9d16-3cf058862029" />
+
 ## ⚙️ Instalação e Configuração
 
 ### Pré-requisitos
