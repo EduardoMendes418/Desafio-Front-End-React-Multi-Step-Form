@@ -42,7 +42,7 @@ describe("FormStep2Address", () => {
     });
   });
 
-  it("deve chamar onBack ao clicar no botão Voltar", () => {
+  it("should call onBack when clicking the Back button", () => {
     render(<FormStep2Address onNext={mockOnNext} onBack={mockOnBack} />);
 
     const backButton = screen.getByRole("button", { name: /voltar/i });
@@ -51,7 +51,7 @@ describe("FormStep2Address", () => {
     expect(mockOnBack).toHaveBeenCalledTimes(1);
   });
 
-  it("deve submeter o formulário ao clicar em Próximo", async () => {
+  it("must submit the form by clicking Next", async () => {
     const mockSubmitHandler = jest.fn((callback) => (e: React.FormEvent) => {
       e.preventDefault();
       callback();
@@ -82,7 +82,7 @@ describe("FormStep2Address", () => {
     });
   });
 
-  it("deve exibir mensagens de erro quando houver errors", () => {
+  it("should display error messages when there are errors", () => {
     const mockErrors = {
       cep: { message: "CEP é obrigatório" },
       street: { message: "Rua é obrigatória" },
@@ -109,7 +109,7 @@ describe("FormStep2Address", () => {
     expect(screen.getByText("Número é obrigatório")).toBeInTheDocument();
   });
 
-  it("deve chamar register para todos os campos", () => {
+  it("must call register for all fields", () => {
     render(<FormStep2Address onNext={mockOnNext} onBack={mockOnBack} />);
 
     expect(mockRegister).toHaveBeenCalledWith("cep");
