@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ReviewSectionProps {
   title: string;
@@ -32,7 +32,7 @@ export const ReviewSection: React.FC<ReviewSectionProps> = ({
           Editar
         </button>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
         {fields.map((field, index) => (
           <div key={index} className="space-y-1">

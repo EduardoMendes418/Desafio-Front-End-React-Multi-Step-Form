@@ -1,6 +1,6 @@
-import React from 'react';
-import { Plan } from '../../services/mockApi';
-import { PlanCard } from './PlanCard';
+import React from "react";
+import { Plan } from "../../services/mockApi";
+import { PlanCard } from "./PlanCard";
 
 interface PlanSelectorProps {
   plans: Plan[];
@@ -38,7 +38,7 @@ export const PlanSelector: React.FC<PlanSelectorProps> = ({
         Selecione um plano
         <span className="text-red-500 ml-1">*</span>
       </label>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {plans.map((plan) => (
           <PlanCard

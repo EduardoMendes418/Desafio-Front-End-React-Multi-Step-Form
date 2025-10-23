@@ -38,7 +38,7 @@ export const InputField: React.FC<InputFieldProps> = ({
       </label>
 
       <input
-          id={inputId}
+        id={inputId}
         type={type}
         {...register}
         onChange={onChange}

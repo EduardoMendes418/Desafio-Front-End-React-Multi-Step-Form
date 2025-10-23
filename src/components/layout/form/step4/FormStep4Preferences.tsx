@@ -10,16 +10,16 @@ export const FormStep4Preferences: React.FC<FormStep4PreferencesProps> = ({
   onNext,
   onBack,
 }) => {
- const {
-  register,
-  handleSubmit,
-  theme,
-  interests,
-  notifications,
-  errors,
-  isValid,
-  onSubmit,
-} = usePreferencesForm(onNext);
+  const {
+    register,
+    handleSubmit,
+    theme,
+    interests,
+    notifications,
+    errors,
+    isValid,
+    onSubmit,
+  } = usePreferencesForm(onNext);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

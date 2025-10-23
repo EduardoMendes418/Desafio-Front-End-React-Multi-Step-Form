@@ -23,7 +23,7 @@ export const preferencesSchema = z
     {
       message: "Selecione pelo menos um tipo de notificação",
       path: ["notifications"],
-    }
+    },
   );
 
 export type PreferencesFormData = z.infer<typeof preferencesSchema>;

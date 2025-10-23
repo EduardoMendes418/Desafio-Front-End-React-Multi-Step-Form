@@ -1,4 +1,4 @@
-import { FormStep } from './form';
+import { FormStep } from "./form";
 
 export interface Step {
   number: FormStep;

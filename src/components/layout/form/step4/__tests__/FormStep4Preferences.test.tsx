@@ -68,19 +68,21 @@ describe("FormStep4Preferences Component", () => {
     render(<FormStep4Preferences onNext={mockOnNext} onBack={mockOnBack} />);
 
     expect(
-      screen.getByRole("heading", { name: /Preferências/i })
+      screen.getByRole("heading", { name: /Preferências/i }),
     ).toBeInTheDocument();
 
     expect(
-      screen.getByText(/Personalize sua experiência/i)
+      screen.getByText(/Personalize sua experiência/i),
     ).toBeInTheDocument();
 
     expect(screen.getByTestId("notification-section")).toHaveTextContent(
-      "Notifications Loaded"
+      "Notifications Loaded",
     );
-    expect(screen.getByTestId("theme-section")).toHaveTextContent("Theme: dark");
+    expect(screen.getByTestId("theme-section")).toHaveTextContent(
+      "Theme: dark",
+    );
     expect(screen.getByTestId("interests-section")).toHaveTextContent(
-      "music, sports"
+      "music, sports",
     );
   });
 
@@ -135,7 +137,7 @@ describe("FormStep4Preferences Component", () => {
     render(<FormStep4Preferences onNext={mockOnNext} onBack={mockOnBack} />);
 
     expect(screen.getByTestId("notification-section")).toHaveTextContent(
-      "No Notifications"
+      "No Notifications",
     );
     expect(screen.getByTestId("interests-section")).toHaveTextContent("None");
   });

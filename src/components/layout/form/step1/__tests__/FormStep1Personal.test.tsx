@@ -67,7 +67,7 @@ describe("FormStep1Personal", () => {
 
     expect(screen.getByText("Informações Pessoais")).toBeInTheDocument();
     expect(
-      screen.getByText("Preencha suas informações pessoais básicas")
+      screen.getByText("Preencha suas informações pessoais básicas"),
     ).toBeInTheDocument();
   });
 

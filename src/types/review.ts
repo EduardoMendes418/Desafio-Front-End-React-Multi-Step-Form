@@ -5,7 +5,7 @@ export interface FormStep5ReviewProps {
 
 export interface ToastState {
   message: string;
-  type: 'success' | 'error';
+  type: "success" | "error";
   isVisible: boolean;
 }
 

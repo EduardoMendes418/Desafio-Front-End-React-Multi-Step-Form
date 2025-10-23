@@ -2,16 +2,23 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import { FormStep5Review } from "../FormStep5Review";
 import { useReviewForm } from "../../../../../hooks/useReviewForm";
 
-
 jest.mock("../../../../../hooks/useReviewForm", () => ({
   useReviewForm: jest.fn(),
 }));
 
 jest.mock("../../../../../utils/reviewFormatters", () => ({
-  formatPersonalData: jest.fn().mockReturnValue([{ label: "Name", value: "John Doe" }]),
-  formatAddressData: jest.fn().mockReturnValue([{ label: "City", value: "New York" }]),
-  formatAccountData: jest.fn().mockReturnValue([{ label: "Username", value: "johnny" }]),
-  formatPreferencesData: jest.fn().mockReturnValue([{ label: "Theme", value: "Dark" }]),
+  formatPersonalData: jest
+    .fn()
+    .mockReturnValue([{ label: "Name", value: "John Doe" }]),
+  formatAddressData: jest
+    .fn()
+    .mockReturnValue([{ label: "City", value: "New York" }]),
+  formatAccountData: jest
+    .fn()
+    .mockReturnValue([{ label: "Username", value: "johnny" }]),
+  formatPreferencesData: jest
+    .fn()
+    .mockReturnValue([{ label: "Theme", value: "Dark" }]),
 }));
 
 jest.mock("../../../../ui/ReviewSection.tsx", () => ({
@@ -43,7 +50,9 @@ jest.mock("../../toast/Toast", () => ({
   Toast: ({ message, type, isVisible, onClose }: any) =>
     isVisible ? (
       <div role="alert">
-        <p>{type}: {message}</p>
+        <p>
+          {type}: {message}
+        </p>
         <button onClick={onClose}>Close</button>
       </div>
     ) : null,
@@ -81,7 +90,9 @@ describe("FormStep5Review", () => {
     render(<FormStep5Review onBack={mockOnBack} onEdit={mockOnEdit} />);
 
     expect(screen.getByText("Revisão e Confirmação")).toBeInTheDocument();
-    expect(screen.getByText("Revise suas informações antes de confirmar o cadastro")).toBeInTheDocument();
+    expect(
+      screen.getByText("Revise suas informações antes de confirmar o cadastro"),
+    ).toBeInTheDocument();
 
     expect(screen.getByText("Informações Pessoais")).toBeInTheDocument();
     expect(screen.getByText("Endereço")).toBeInTheDocument();
@@ -118,17 +129,23 @@ describe("FormStep5Review", () => {
 
     render(<FormStep5Review onBack={mockOnBack} onEdit={mockOnEdit} />);
     const editButtons = screen.getAllByText("Edit");
-    fireEvent.click(editButtons[2]); 
+    fireEvent.click(editButtons[2]);
     expect(mockOnEdit).toHaveBeenCalledWith(3);
   });
 
   it("shows toast when visible and allows closing it", () => {
     mockUseReviewForm({
-      toast: { message: "Saved successfully", type: "success", isVisible: true },
+      toast: {
+        message: "Saved successfully",
+        type: "success",
+        isVisible: true,
+      },
     });
 
     render(<FormStep5Review onBack={mockOnBack} onEdit={mockOnEdit} />);
-    expect(screen.getByRole("alert")).toHaveTextContent("success: Saved successfully");
+    expect(screen.getByRole("alert")).toHaveTextContent(
+      "success: Saved successfully",
+    );
 
     fireEvent.click(screen.getByText("Close"));
     expect(mockCloseToast).toHaveBeenCalledTimes(1);

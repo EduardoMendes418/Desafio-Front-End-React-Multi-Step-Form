@@ -1,9 +1,11 @@
-import React from 'react';
-import { InputField } from '../../../ui/InputField';
-import { usePersonalForm } from '../../../../hooks/usePersonalForm';
-import { FormStep1PersonalProps } from '../../../../types/components';
+import React from "react";
+import { InputField } from "../../../ui/InputField";
+import { usePersonalForm } from "../../../../hooks/usePersonalForm";
+import { FormStep1PersonalProps } from "../../../../types/components";
 
-export const FormStep1Personal: React.FC<FormStep1PersonalProps> = ({ onNext }) => {
+export const FormStep1Personal: React.FC<FormStep1PersonalProps> = ({
+  onNext,
+}) => {
   const {
     register,
     handleSubmit,
@@ -15,45 +17,41 @@ export const FormStep1Personal: React.FC<FormStep1PersonalProps> = ({ onNext }) 
 
   const formFields = [
     {
-      name: 'fullName' as const,
-      label: 'Nome Completo',
-      type: 'text' as const,
+      name: "fullName" as const,
+      label: "Nome Completo",
+      type: "text" as const,
       required: true,
     },
     {
-      name: 'document' as const,
-      label: 'CPF/CNPJ',
-      type: 'text' as const,
+      name: "document" as const,
+      label: "CPF/CNPJ",
+      type: "text" as const,
       required: true,
       onChange: handleDocumentChange,
     },
     {
-      name: 'email' as const,
-      label: 'Email',
-      type: 'email' as const,
+      name: "email" as const,
+      label: "Email",
+      type: "email" as const,
       required: true,
     },
     {
-      name: 'phone' as const,
-      label: 'Telefone',
-      type: 'tel' as const,
+      name: "phone" as const,
+      label: "Telefone",
+      type: "tel" as const,
       required: true,
       onChange: handlePhoneChange,
     },
     {
-      name: 'birthDate' as const,
-      label: 'Data de Nascimento',
-      type: 'date' as const,
+      name: "birthDate" as const,
+      label: "Data de Nascimento",
+      type: "date" as const,
       required: true,
     },
   ];
 
   return (
-    <form 
-      onSubmit={handleSubmit(onSubmit)} 
-      className="space-y-6"
-      noValidate
-    >
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-6" noValidate>
       <header>
         <h2 className="text-2xl font-bold text-gray-800 mb-2">
           Informações Pessoais

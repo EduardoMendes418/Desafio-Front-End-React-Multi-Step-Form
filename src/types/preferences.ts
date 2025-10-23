@@ -4,7 +4,7 @@ export interface PreferencesFormData {
     sms: boolean;
     push: boolean;
   };
-  theme: 'light' | 'dark';
+  theme: "light" | "dark";
   interests: string[];
 }
 

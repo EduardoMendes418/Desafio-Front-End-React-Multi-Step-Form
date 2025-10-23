@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface PreferencesNavigationProps {
   onBack: () => void;
@@ -6,10 +6,10 @@ interface PreferencesNavigationProps {
   isValid: boolean;
 }
 
-export const PreferencesNavigation: React.FC<PreferencesNavigationProps> = ({ 
-  onBack, 
+export const PreferencesNavigation: React.FC<PreferencesNavigationProps> = ({
+  onBack,
   onSubmit,
-  isValid 
+  isValid,
 }) => {
   return (
     <div className="flex justify-between pt-4 border-t border-gray-200">
@@ -26,9 +26,10 @@ export const PreferencesNavigation: React.FC<PreferencesNavigationProps> = ({
         disabled={!isValid}
         className={`
           px-6 py-2 rounded-md focus:outline-none focus:ring-2 transition-colors
-          ${isValid
-            ? 'bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500'
-            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+          ${
+            isValid
+              ? "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500"
+              : "bg-gray-300 text-gray-500 cursor-not-allowed"
           }
         `}
       >

@@ -49,7 +49,7 @@ export const NotificationSection: React.FC<NotificationSectionProps> = ({
 
       {!hasNotificationSelected && !errors.notifications && (
         <p className="text-sm text-red-500 mt-2">
-           <span className="mr-1">⚠</span>
+          <span className="mr-1">⚠</span>
           Selecione pelo menos um tipo de notificação
         </p>
       )}

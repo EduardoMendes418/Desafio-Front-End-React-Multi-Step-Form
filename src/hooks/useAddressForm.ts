@@ -1,10 +1,10 @@
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useFormStore } from '../store/formStore';
-import { addressSchema, AddressFormData } from '../schemas/addressSchema';
-import { fetchAddressByCEP } from '../services/cepService';
-import { formatCEP, cleanCEP, isValidCEP } from '../utils/addressFormatters';
-import { ADDRESS_VALIDATION_MESSAGES } from '../constants/addressValidation';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useFormStore } from "../store/formStore";
+import { addressSchema, AddressFormData } from "../schemas/addressSchema";
+import { fetchAddressByCEP } from "../services/cepService";
+import { formatCEP, cleanCEP, isValidCEP } from "../utils/addressFormatters";
+import { ADDRESS_VALIDATION_MESSAGES } from "../constants/addressValidation";
 
 export const useAddressForm = (onNext: () => void, onBack: () => void) => {
   const { formData, updateFormData } = useFormStore();
@@ -12,7 +12,7 @@ export const useAddressForm = (onNext: () => void, onBack: () => void) => {
   const methods = useForm<AddressFormData>({
     resolver: zodResolver(addressSchema),
     defaultValues: formData.address,
-    mode: 'onBlur',
+    mode: "onBlur",
   });
 
   const {
@@ -27,52 +27,53 @@ export const useAddressForm = (onNext: () => void, onBack: () => void) => {
 
   const handleCEPChange = async (rawCEP: string) => {
     const cleanedCEP = cleanCEP(rawCEP);
-    
+
     if (!isValidCEP(cleanedCEP)) {
       return;
     }
 
     try {
       const addressData = await fetchAddressByCEP(cleanedCEP);
-      
-      if (addressData) {
 
+      if (addressData) {
         const fieldsToUpdate = {
           street: addressData.logradouro,
           neighborhood: addressData.bairro,
           city: addressData.localidade,
           state: addressData.uf,
-          complement: addressData.complemento || '',
+          complement: addressData.complemento || "",
         };
 
         Object.entries(fieldsToUpdate).forEach(([field, value]) => {
           setValue(field as keyof AddressFormData, value);
         });
 
-        clearErrors(['street', 'neighborhood', 'city', 'state']);
-        
-        await trigger(['street', 'neighborhood', 'city', 'state']);
+        clearErrors(["street", "neighborhood", "city", "state"]);
+
+        await trigger(["street", "neighborhood", "city", "state"]);
       } else {
-        setError('cep', { 
-          message: ADDRESS_VALIDATION_MESSAGES.CEP.NOT_FOUND 
+        setError("cep", {
+          message: ADDRESS_VALIDATION_MESSAGES.CEP.NOT_FOUND,
         });
       }
     } catch (error) {
-      setError('cep', { 
-        message: ADDRESS_VALIDATION_MESSAGES.CEP.FETCH_ERROR 
+      setError("cep", {
+        message: ADDRESS_VALIDATION_MESSAGES.CEP.FETCH_ERROR,
       });
     }
   };
 
-  const handleCEPInputChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleCEPInputChange = async (
+    e: React.ChangeEvent<HTMLInputElement>,
+  ) => {
     const formattedCEP = formatCEP(e.target.value);
-    setValue('cep', formattedCEP);
-    await trigger('cep');
+    setValue("cep", formattedCEP);
+    await trigger("cep");
     await handleCEPChange(e.target.value);
   };
 
   const onSubmit = (data: AddressFormData) => {
-    updateFormData('address', data);
+    updateFormData("address", data);
     onNext();
   };
 

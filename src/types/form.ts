@@ -29,7 +29,7 @@ export interface PreferencesInfo {
     sms: boolean;
     push: boolean;
   };
-  theme: 'light' | 'dark';
+  theme: "light" | "dark";
   interests: string[];
 }
 

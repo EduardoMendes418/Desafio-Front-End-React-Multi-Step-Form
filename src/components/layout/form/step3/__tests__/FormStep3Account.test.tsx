@@ -89,7 +89,7 @@ describe("FormStep3Account", () => {
 
     render(<FormStep3Account onNext={mockOnNext} onBack={mockOnBack} />);
     expect(
-      screen.queryByTestId("password-strength-meter")
+      screen.queryByTestId("password-strength-meter"),
     ).not.toBeInTheDocument();
   });
 
@@ -101,7 +101,7 @@ describe("FormStep3Account", () => {
 
     render(<FormStep3Account onNext={mockOnNext} onBack={mockOnBack} />);
     expect(screen.getByTestId("password-strength-meter")).toHaveTextContent(
-      "Strength: 3"
+      "Strength: 3",
     );
   });
 

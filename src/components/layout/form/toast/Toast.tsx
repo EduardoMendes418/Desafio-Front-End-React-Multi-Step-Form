@@ -4,7 +4,6 @@ import { useToast } from "../../../../hooks/useToast";
 import { ToastContainer } from "../../../ui/ToastContainer";
 import { ToastContent } from "../../../ui/ToastContent";
 
-
 export const Toast: React.FC<ToastProps> = ({
   message,
   type,

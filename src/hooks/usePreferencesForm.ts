@@ -18,7 +18,7 @@ interface UsePreferencesFormReturn {
 }
 
 export const usePreferencesForm = (
-  onNext: () => void
+  onNext: () => void,
 ): UsePreferencesFormReturn => {
   const { formData, updateFormData } = useFormStore();
 

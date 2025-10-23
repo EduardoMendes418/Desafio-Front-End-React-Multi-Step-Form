@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface FormNavigationProps {
   onBack: () => void;
@@ -13,8 +13,8 @@ export const FormNavigation: React.FC<FormNavigationProps> = ({
   onBack,
   onSubmit,
   isSubmitting = false,
-  backButtonLabel = 'Voltar',
-  nextButtonLabel = 'Próximo',
+  backButtonLabel = "Voltar",
+  nextButtonLabel = "Próximo",
   showBackButton = true,
 }) => {
   return (
@@ -35,7 +35,7 @@ export const FormNavigation: React.FC<FormNavigationProps> = ({
           {backButtonLabel}
         </button>
       )}
-      
+
       <button
         type="submit"
         onClick={onSubmit}
@@ -46,10 +46,10 @@ export const FormNavigation: React.FC<FormNavigationProps> = ({
           focus:ring-blue-500 focus:ring-offset-2
           transition-colors duration-200 font-medium
           ml-auto
-          ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}
+          ${isSubmitting ? "opacity-50 cursor-not-allowed" : ""}
         `}
       >
-        {isSubmitting ? 'Processando...' : nextButtonLabel}
+        {isSubmitting ? "Processando..." : nextButtonLabel}
       </button>
     </footer>
   );

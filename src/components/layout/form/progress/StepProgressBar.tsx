@@ -3,7 +3,6 @@ import { StepProgressBarProps } from "../../../../types/progress";
 import { StepIndicator } from "../../../ui/StepIndicator";
 import { StepConnector } from "../../../ui/StepConnector";
 
-
 export const StepProgressBar: React.FC<StepProgressBarProps> = ({
   currentStep,
   steps,

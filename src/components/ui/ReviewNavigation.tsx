@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 interface ReviewNavigationProps {
   onBack: () => void;
@@ -25,7 +25,7 @@ export const ReviewNavigation: React.FC<ReviewNavigationProps> = ({
       >
         Voltar
       </button>
-      
+
       <button
         onClick={onSubmit}
         disabled={isSubmitting}
